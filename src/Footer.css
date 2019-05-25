@@ -1,0 +1,12 @@
+.footer-container {
+    display: flex;
+    justify-content: flex-end;
+    justify-self: flex-end;
+}
+.footer-container .copyright-container {
+    font-style: italic;
+}
+
+.footer-container .copyright-container .heart-color {
+    color: #e25555;
+}

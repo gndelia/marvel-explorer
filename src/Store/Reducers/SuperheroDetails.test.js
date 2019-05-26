@@ -1,11 +1,17 @@
-import { REQUEST_SUPERHERO_DETAIL, RECEIVE_SUPERHERO_DETAIL } from './../Actions/Superhero';
+import { REQUEST_SUPERHERO_DETAIL, RECEIVE_SUPERHERO_DETAIL } from './../Actions/SuperheroDetails';
 import superheroDetails from './SuperheroDetails';
 
 describe('superheroDetails reducer', () => {
   it('should return the initial state', () => {
-    const mockedState = { id: 1 };
-    expect(superheroDetails(mockedState, ''))
-      .toEqual(mockedState);
+    expect(superheroDetails(undefined, ''))
+      .toEqual({
+        superhero: {
+          urls: [],
+        },
+        ui: {
+          isFetching: false,
+        }
+      });
   });
 
   it('should set isFetching=true when requesting a superhero detail', () => {

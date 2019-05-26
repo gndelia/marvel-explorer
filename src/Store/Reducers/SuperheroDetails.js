@@ -1,4 +1,4 @@
-import { REQUEST_SUPERHERO_DETAIL, RECEIVE_SUPERHERO_DETAIL } from './../Actions/Superhero';
+import { REQUEST_SUPERHERO_DETAIL, RECEIVE_SUPERHERO_DETAIL } from './../Actions/SuperheroDetails';
 export const initialState = {
   superhero: {
     urls: [],

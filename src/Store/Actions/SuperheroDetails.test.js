@@ -6,7 +6,7 @@ import {
   fetchDetails,
   REQUEST_SUPERHERO_DETAIL,
   RECEIVE_SUPERHERO_DETAIL,
-} from './Superhero';
+} from './SuperheroDetails';
 import { fetchSuperheroDetails } from './../../Api/MarvelApi';
 // mock dependency from marvel real api
 jest.mock('./../../Api/MarvelApi', () => ({
@@ -21,10 +21,7 @@ describe('Superhero actions', () => {
   const superhero = { id: 1, name: 'superhero', urls: [] };
 
   it('should create an action to request details for a superhero', () => {
-    const action = {
-      type: REQUEST_SUPERHERO_DETAIL,
-      payload: { id: superhero.id },
-    };
+    const action = { type: REQUEST_SUPERHERO_DETAIL };
     expect(requestDetails(superhero))
       .toEqual(action);
   });
@@ -47,7 +44,7 @@ describe('Superhero actions', () => {
     expect(actionsDispatched)
       .toHaveLength(2);
     expect(actionsDispatched[0])
-      .toEqual(requestDetails(superhero));
+      .toEqual(requestDetails());
     expect(actionsDispatched[1])
       .toEqual(receiveDetails({ id: 1 }));
   });

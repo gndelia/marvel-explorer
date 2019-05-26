@@ -1,6 +1,5 @@
-const BaseMarvelUrl = 'https://gateway.marvel.com:443/v1/public';
-// TODO DO NOT COMMIT
-const apiKeys = '<API-KEY-HERE>';
+const BaseMarvelUrl = 'https://gateway.marvel.com/v1/public';
+const apiKeys = '<API-HERE>';
 
 const getDetailsUrl = ({ id }) => `${BaseMarvelUrl}/characters/${id}?${apiKeys}`;
 

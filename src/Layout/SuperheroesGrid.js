@@ -1,4 +1,5 @@
 import React from 'react';
+import Pager from './Pager';
 
 class SuperheroesGrid extends React.Component {
   constructor(props) {
@@ -6,7 +7,7 @@ class SuperheroesGrid extends React.Component {
     this.renderSuperheroes = this.renderSuperheroes.bind(this);
   }
   componentDidMount() {
-    this.props.fetchSuperheroes();
+    this.props.fetchSuperheroes(this.props.paging);
   }
 
   renderSuperheroes() {
@@ -28,7 +29,10 @@ class SuperheroesGrid extends React.Component {
 
   render() {
     return (
-      <section>
+      <section className="superheroes-grid-container">
+        <Pager
+          paging={this.props.paging}
+          onNavigateToPage={this.props.fetchSuperheroes} />
         <ul className="">
           <li>Name</li>
           <li>Image</li>

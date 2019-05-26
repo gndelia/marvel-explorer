@@ -13,15 +13,28 @@ describe('tests for SuperheroesGrid component', () => {
       appearsInStories: Math.random() < 0.5,
       appearsInEvents: Math.random() < 0.5,
     }));
-  const shallowGrid = (superheroes, fetchDetails) => (
-    shallow(<SuperheroesGrid superheroes={superheroes} fetchDetails={fetchDetails} />)
-  );
+  const shallowGrid = (superheroes, fetchDetails = jest.fn(), fetchSuperheroes = jest.fn()) => {
+    const Component = (
+      <SuperheroesGrid
+        superheroes={superheroes}
+        fetchDetails={fetchDetails}
+        fetchSuperheroes={fetchSuperheroes} />
+    );
+    return shallow(Component);
+  };
   it('should render without crashing', () => {
-    shallowGrid([], jest.fn());
+    shallowGrid([]);
+  });
+
+  it('should fetch super heroes on loading', () => {
+    const fetchSuperheroesSpy = jest.fn();
+    shallowGrid([], jest.fn(), fetchSuperheroesSpy);
+    expect(fetchSuperheroesSpy)
+      .toHaveBeenCalledTimes(1);
   });
 
   it('should render a list of superheroes', () => {
-    const wrapper = shallowGrid(superheroes, jest.fn());
+    const wrapper = shallowGrid(superheroes);
     expect(wrapper.find('.superhero-row'))
       .toHaveLength(superheroes.length);
   });

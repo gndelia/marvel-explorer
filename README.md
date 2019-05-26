@@ -1,7 +1,7 @@
 # marvel-explorer
 Learn the details of your favourite Marvel superheroes!
 
-[![Build Status](https://travis-ci.com/gndelia/marvel-explorer.svg?branch=master)](https://travis-ci.com/gndelia/marvel-explorer)
+[![Build Status](https://travis-ci.com/gndelia/marvel-explorer.svg?branch=master)](https://travis-ci.com/gndelia/marvel-explorer) [![codecov](https://codecov.io/gh/gndelia/marvel-explorer/branch/master/graph/badge.svg)](https://codecov.io/gh/gndelia/marvel-explorer)
 
 ## Local Setup
 

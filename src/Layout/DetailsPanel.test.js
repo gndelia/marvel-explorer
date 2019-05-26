@@ -6,30 +6,46 @@ describe('Unit tests for DetailsPanel', () => {
   const urls = [{ type: 'bio', url: 'url1' }, { type: 'wiki', url: 'url2' }];
   const superhero = { id: 1, description: 'description', urls, image: 'image.jpg', name: 'name' };
 
-  const shallowDetails = (superhero, isFetching) => (
-    shallow(<DetailsPanel superhero={superhero} isFetching={isFetching} />)
+  const createMockRouteMatch = id => ({ params: { id: id && id.toString() } });
+
+  const shallowDetails = (
+    superhero,
+    isFetching,
+    match,
+    fetchDetails = jest.fn(),
+    cleanDetails = jest.fn(),
+  ) => (
+    shallow((
+      <DetailsPanel
+        superhero={superhero}
+        isFetching={isFetching}
+        match={match}
+        fetchDetails={fetchDetails}
+        cleanDetails={cleanDetails} />
+    ))
   );
 
   it('renders without crashing', () => {
-    shallowDetails({}, true);
+    shallowDetails({}, true, createMockRouteMatch());
   });
 
   it('renders a loading message if the data is being fetched', () => {
     const expected = <span>Loading details of the superhero...</span>;
-    const wrapper = shallowDetails({ id: 1 }, true);
+    const wrapper = shallowDetails({ id: 1 }, true, createMockRouteMatch());
     expect(wrapper.equals(expected))
       .toEqual(true);
   });
 
   it('renders a message when no superhero has been selected', () => {
     const expected = <span>Pick a superhero to learn about him/her!</span>;
-    const wrapper = shallowDetails({}, false);
+    const wrapper = shallowDetails({}, false, createMockRouteMatch(0));
     expect(wrapper.equals(expected))
       .toEqual(true);
   });
 
   it('renders a superhero and its details', () => {
-    const wrapper = shallowDetails(superhero, false);
+    const fetchDetails = jest.fn();
+    const wrapper = shallowDetails(superhero, false, createMockRouteMatch(1), fetchDetails);
     expect(wrapper.find('section'))
       .toHaveLength(1);
     expect(wrapper
@@ -46,15 +62,47 @@ describe('Unit tests for DetailsPanel', () => {
       .toEqual(`BIO: ${superhero.description}`);
     expect(wrapper.find('a'))
       .toHaveLength(urls.length);
+    expect(fetchDetails)
+      .toHaveBeenCalledTimes(1);
   });
 
   it('renders a "No Bio available" message if the superhero does not have a bio', () => {
-    const wrapper = shallowDetails({ ...superhero, description: '' }, false);
+    const wrapper = shallowDetails({ ...superhero, description: '' }, false, createMockRouteMatch(1));
     expect(wrapper
       .find('.superhero-bio')
       .first()
       .text()
     )
       .toEqual('BIO: No BIO available');
+  });
+
+  it('fetches details for a superhero if the id changes (due to routing)', () => {
+    const fetchDetails = jest.fn();
+    const wrapper = shallowDetails(superhero, false, createMockRouteMatch(1), fetchDetails);
+    // update props so did update is called
+    const newId = 2;
+    wrapper.setProps({ match: createMockRouteMatch(newId) });
+    expect(fetchDetails)
+      .toHaveBeenLastCalledWith(newId);
+    expect(fetchDetails)
+      .toHaveBeenCalledTimes(2);
+    // set again same props and verify function was not called again
+    wrapper.setProps({ match: createMockRouteMatch(newId) });
+    expect(fetchDetails)
+      .toHaveBeenCalledTimes(2);
+  });
+
+  it('should clean details', () => {
+    const fetchDetails = jest.fn();
+    const cleanDetails = jest.fn();
+    const wrapper = shallowDetails(
+      superhero,
+      false,createMockRouteMatch(1),
+      fetchDetails,
+      cleanDetails
+    );
+    wrapper.setProps({ match: { params: {} } });
+    expect(cleanDetails)
+      .toHaveBeenCalledTimes(1);
   });
 });

@@ -17,7 +17,6 @@ describe('tests for SuperheroesGrid component', () => {
   const shallowGrid = (superheroes, otherProps = {}) => {
     // add some default values to mock what is not necessary for the specific shallow render.
     const {
-      fetchDetails = jest.fn(),
       fetchSuperheroes = jest.fn(),
       onNavigateToPage = jest.fn(),
       paging = {},
@@ -25,7 +24,6 @@ describe('tests for SuperheroesGrid component', () => {
     const Component = (
       <SuperheroesGrid
         superheroes={superheroes}
-        fetchDetails={fetchDetails}
         fetchSuperheroes={fetchSuperheroes}
         onNavigateToPage={onNavigateToPage}
         paging={paging} />
@@ -51,15 +49,15 @@ describe('tests for SuperheroesGrid component', () => {
       .toEqual(true);
   });
 
-  it('should fetch details of the superhero when clicking Details button', () => {
-    const fetchDetails = jest.fn();
-    const wrapper = shallowGrid(superheroes, { fetchDetails });
+  it('should generate appropiate link for a superhero', () => {
+    const wrapper = shallowGrid(superheroes);
     const superheroIndex = 2;
-    wrapper
-      .find('button')
-      .at(superheroIndex)
-      .simulate('click');
-    expect(fetchDetails)
-      .toHaveBeenCalledWith(superheroes[superheroIndex]);
+    expect(
+      wrapper
+        .find('Link')
+        .at(superheroIndex)
+        .prop('to')
+    )
+      .toEqual(`/${superheroes[superheroIndex].id}`);
   });
 });

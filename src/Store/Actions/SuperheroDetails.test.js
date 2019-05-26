@@ -4,8 +4,10 @@ import {
   requestDetails,
   receiveDetails,
   fetchDetails,
+  cleanDetails,
   REQUEST_SUPERHERO_DETAIL,
   RECEIVE_SUPERHERO_DETAIL,
+  CLEAN_SUPERHERO_DETAILS,
 } from './SuperheroDetails';
 import { fetchSuperheroDetails } from './../../Api/MarvelApi';
 // mock dependency from marvel real api
@@ -32,6 +34,12 @@ describe('Superhero actions', () => {
       payload: { superhero },
     };
     expect(receiveDetails(superhero))
+      .toEqual(action);
+  });
+
+  it('should create an action to clean the superhero details', () => {
+    const action = { type: CLEAN_SUPERHERO_DETAILS };
+    expect(cleanDetails())
       .toEqual(action);
   });
 

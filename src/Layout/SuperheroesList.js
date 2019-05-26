@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import SuperheroesGrid from './SuperheroesGrid';
-import { fetchDetails } from './../Store/Actions/SuperheroDetails';
 import { fetchSuperheroes } from './../Store/Actions/Superheroes';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = ({ superheroes }) => {
   const {
@@ -15,7 +15,6 @@ const mapStateToProps = ({ superheroes }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchDetails: superhero => dispatch(fetchDetails(superhero)),
   fetchSuperheroes: pagingParams => dispatch(fetchSuperheroes(pagingParams)),
 });
 
@@ -24,4 +23,4 @@ const SuperheroesList = connect(
   mapDispatchToProps
 )(SuperheroesGrid);
 
-export default SuperheroesList;
+export default withRouter(SuperheroesList);

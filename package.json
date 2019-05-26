@@ -31,6 +31,9 @@
     ]
   },
   "devDependencies": {
-    "eslint-plugin-jsx-a11y": "^6.2.1"
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.13.1",
+    "react-test-renderer": "^16.8.6"
   }
 }

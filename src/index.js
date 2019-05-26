@@ -2,13 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { Provider } from 'react-redux';
+import { createBrowserHistory } from 'history';
+import { Router } from 'react-router-dom';
 import store from './Store/ConfigureStore';
 import App from './Layout/App';
 import * as serviceWorker from './serviceWorker';
 
+const basename = '/superheroes';
+
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router history={createBrowserHistory({ basename })}>
+      <App />
+    </Router>
   </Provider>
   ,
   document.getElementById('root')

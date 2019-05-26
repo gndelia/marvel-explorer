@@ -1,5 +1,6 @@
 import React from 'react';
 import Pager from './Pager';
+import { Link } from 'react-router-dom';
 
 class SuperheroesGrid extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class SuperheroesGrid extends React.Component {
   }
 
   renderSuperheroes() {
-    const { superheroes, fetchDetails } = this.props;
+    const { superheroes } = this.props;
     return superheroes.map(superhero => (
       <li
         className="superhero-row"
@@ -22,7 +23,9 @@ class SuperheroesGrid extends React.Component {
         <span>{superhero.appearsInSeries.toString()}</span>
         <span>{superhero.appearsInEvents.toString()}</span>
         <span>{superhero.appearsInStories.toString()}</span>
-        <button onClick={() => fetchDetails(superhero)}>View Details</button>
+        <Link to={`/${superhero.id}`}>
+          <button>View Details</button>
+        </Link>
       </li>
     ));
   }

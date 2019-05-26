@@ -1,4 +1,8 @@
-import { REQUEST_SUPERHERO_DETAIL, RECEIVE_SUPERHERO_DETAIL } from './../Actions/SuperheroDetails';
+import {
+  REQUEST_SUPERHERO_DETAIL,
+  RECEIVE_SUPERHERO_DETAIL,
+  CLEAN_SUPERHERO_DETAILS,
+} from './../Actions/SuperheroDetails';
 import superheroDetails from './SuperheroDetails';
 
 describe('superheroDetails reducer', () => {
@@ -27,5 +31,24 @@ describe('superheroDetails reducer', () => {
     const expectedState = { ui: { isFetching: false }, superhero: { id: superhero.id } };
     expect(superheroDetails(mockedState, mockedAction))
       .toEqual(expectedState);
+  });
+
+  it('should clear the superhero details', () => {
+    const mockedState = {
+      ui: { isFetching: false },
+      superhero: {
+        id: 1,
+        name: 'name',
+        urls: [],
+      },
+    };
+    const action = { type: CLEAN_SUPERHERO_DETAILS };
+    expect(superheroDetails(mockedState, action))
+      .toEqual({
+        ...mockedState,
+        superhero: {
+          urls: [],
+        },
+      });
   });
 });

@@ -2,6 +2,7 @@ import { fetchSuperheroDetails } from './../../Api/MarvelApi';
 // actions
 export const REQUEST_SUPERHERO_DETAIL = 'REQUEST_SUPERHERO_DETAIL';
 export const RECEIVE_SUPERHERO_DETAIL = 'RECEIVE_SUPERHERO_DETAIL';
+export const CLEAN_SUPERHERO_DETAILS = 'CLEAN_SUPERHERO_DETAILS';
 
 // actions creators
 export const requestDetails = function requestDetails() {
@@ -15,6 +16,10 @@ export const receiveDetails = function receiveDetails(superhero) {
       superhero,
     },
   };
+};
+
+export const cleanDetails = function cleanDetails() {
+  return { type: CLEAN_SUPERHERO_DETAILS };
 };
 
 export const fetchDetails = function fetchDetails(superhero) {

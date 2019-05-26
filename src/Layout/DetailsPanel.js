@@ -2,28 +2,61 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './DetailsPanel.css';
 
-const DetailsPanel = ({ superhero, isFetching }) => {
-  if (!superhero.id) {
-    return <span>Pick a superhero to learn about him/her!</span>;
+class DetailsPanel extends React.Component {
+  constructor(props) {
+    super(props);
+    this.renderUrls = this.renderUrls.bind(this);
   }
-  if (isFetching) {
-    return <span>Loading details of the superhero...</span>;
+
+  componentDidMount() {
+    const id = parseInt(this.props.match.params.id, 10);
+    if (Number.isInteger(id)) {
+      this.props.fetchDetails(id);
+    }
   }
-  const renderUrls = urls => urls.map(({ type, url }) => (
-    <li key={type}>
-      <a href={url}>{type}</a>
-    </li>));
-  return (
-    <section className="details-panel-container">
-      <h3 className="superhero-name">{superhero.name}</h3>
-      <img className="superhero-image" src={superhero.image} alt="superhero main portrait" />
-      <span className="superhero-bio">BIO: {superhero.description || 'No BIO available'}</span>
-      <ul>
-        {renderUrls(superhero.urls)}
-      </ul>
-    </section>
-  );
-};
+
+  componentDidUpdate(prevProps) {
+    const { id } = this.props.match.params;
+    if (prevProps.match.params.id !== id && id === undefined) {
+      this.props.cleanDetails();
+      return;
+    }
+    const parsedId = parseInt(id, 10);
+    // if url changed
+    if (prevProps.match.params.id !== this.props.match.params.id && Number.isInteger(parsedId)) {
+      this.props.fetchDetails(parsedId);
+      return;
+    }
+  }
+
+  renderUrls(urls) {
+    return urls.map(({ type, url }) => (
+      <li key={type}>
+        <a href={url}>{type}</a>
+      </li>)
+    );
+  }
+
+  render() {
+    const { superhero, isFetching } = this.props;
+    if (!superhero.id) {
+      return <span>Pick a superhero to learn about him/her!</span>;
+    }
+    if (isFetching) {
+      return <span>Loading details of the superhero...</span>;
+    }
+    return (
+      <section className="details-panel-container">
+        <h3 className="superhero-name">{superhero.name}</h3>
+        <img className="superhero-image" src={superhero.image} alt="superhero main portrait" />
+        <span className="superhero-bio">BIO: {superhero.description || 'No BIO available'}</span>
+        <ul>
+          {this.renderUrls(superhero.urls)}
+        </ul>
+      </section>
+    );
+  }
+}
 
 DetailsPanel.propTypes = {
   superhero: PropTypes.shape({

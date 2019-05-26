@@ -15,9 +15,9 @@ const DetailsPanel = ({ superhero, isFetching }) => {
     </li>));
   return (
     <section className="details-panel-container">
-      <h3>{superhero.name}</h3>
+      <h3 className="superhero-name">{superhero.name}</h3>
       <img className="superhero-image" src={superhero.image} alt="superhero main portrait" />
-      <span>BIO: {superhero.description || 'No BIO available'}</span>
+      <span className="superhero-bio">BIO: {superhero.description || 'No BIO available'}</span>
       <ul>
         {renderUrls(superhero.urls)}
       </ul>

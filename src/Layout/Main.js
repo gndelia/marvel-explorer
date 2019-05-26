@@ -1,12 +1,12 @@
 import React from 'react';
 import './Main.css';
 import SuperheroesList from './SuperheroesList';
-import SuperheroeDetails from './SuperheroeDetails';
+import SuperheroDetails from './SuperheroDetails';
 
 const Main = () => (
   <div className="main-container">
     <SuperheroesList />
-    <SuperheroeDetails />
+    <SuperheroDetails />
   </div>
 );
 

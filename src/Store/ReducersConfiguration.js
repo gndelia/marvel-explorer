@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import selectedSuperhero from './Reducers/SelectedSuperhero';
+import superheroDetails from './Reducers/SuperheroDetails';
 import superheroes from './Reducers/Superheroes';
 const rootReducer = combineReducers({
-  selectedSuperhero,
+  superheroDetails,
   superheroes,
 });
 

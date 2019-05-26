@@ -3,13 +3,20 @@ import SuperheroesGrid from './SuperheroesGrid';
 import { fetchDetails } from './../Store/Actions/SuperheroDetails';
 import { fetchSuperheroes } from './../Store/Actions/Superheroes';
 
-const mapStateToProps = ({ superheroes: { list: superheroes } }) => ({
-  superheroes,
-});
+const mapStateToProps = ({ superheroes }) => {
+  const {
+    list,
+    ui: { paging },
+  } = superheroes;
+  return {
+    superheroes: list,
+    paging,
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
   fetchDetails: superhero => dispatch(fetchDetails(superhero)),
-  fetchSuperheroes: () => dispatch(fetchSuperheroes()),
+  fetchSuperheroes: pagingParams => dispatch(fetchSuperheroes(pagingParams)),
 });
 
 const SuperheroesList = connect(

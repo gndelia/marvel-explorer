@@ -3,8 +3,10 @@ import thunk from 'redux-thunk';
 import {
   REQUEST_SUPERHEROES,
   RECEIVE_SUPERHEROES,
+  UI_UPDATE_PAGING_PARAMS,
   requestSuperheroes,
   receiveSuperheroes,
+  updatePagingParams,
   fetchSuperheroes,
 } from './Superheroes';
 import { fetchSuperheroesList } from './../../Api/MarvelApi';
@@ -37,13 +39,22 @@ describe('Tests for Superheroes Actions', () => {
     // verify the actions we expected have been dispatched
     const actionsDispatched = store.getActions();
     expect(actionsDispatched)
-      .toHaveLength(2);
+      .toHaveLength(3);
     expect(actionsDispatched[0])
-      .toEqual({ type: REQUEST_SUPERHEROES });
+      .toEqual({ type: UI_UPDATE_PAGING_PARAMS, payload: { ...pagingParams } });
     expect(actionsDispatched[1])
+      .toEqual({ type: REQUEST_SUPERHEROES });
+    expect(actionsDispatched[2])
       .toEqual({
         type: RECEIVE_SUPERHEROES,
         payload: { superheroes: [] },
       });
+  });
+
+  it('should create an action to navigate to a page', () => {
+    const pagingParams = {};
+    const action = { type: UI_UPDATE_PAGING_PARAMS, payload: { ...pagingParams } };
+    expect(updatePagingParams(pagingParams))
+      .toEqual(action);
   });
 });

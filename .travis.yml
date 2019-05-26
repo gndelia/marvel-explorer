@@ -9,11 +9,13 @@ cache:
 
 install:
   - npm install -g yarn
+  - npm install -g codecov
   - yarn install
 
 script:
   - yarn lint
-  - CI=true yarn test
+  - yarn test:coverage
+  - codecov
 
 notifications:
   email: false

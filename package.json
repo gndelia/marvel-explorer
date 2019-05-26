@@ -16,7 +16,18 @@
     "build": "react-scripts build",
     "lint": "eslint src/**/*.js",
     "test": "react-scripts test",
+    "test:coverage": "CI=true react-scripts test --coverage",
     "eject": "react-scripts eject"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!**/serviceWorker.js",
+      "!**/index.js",
+      "!**/setupTests.js",
+      "!**/Store/ConfigureStore.js",
+      "!**/Store/ReducersConfiguration.js"
+    ]
   },
   "browserslist": {
     "production": [

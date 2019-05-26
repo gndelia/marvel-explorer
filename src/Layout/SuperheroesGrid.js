@@ -3,6 +3,7 @@ import React from 'react';
 const SuperheroesList = ({ superheroes, fetchDetails }) => {
   const renderRows = () => superheroes.map(superhero => (
     <li
+      className="superhero-row"
       key={superhero.id}>
       <span>{superhero.name}</span>
       <img src={superhero.image} alt="main superhero thumbnail" />

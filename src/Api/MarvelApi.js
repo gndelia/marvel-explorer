@@ -1,15 +1,14 @@
-const BaseMarvelUrl = 'https://gateway.marvel.com/v1/public';
-const apiKeys = '<API-HERE>';
+import { apiFetch, apiFetchDetails } from './Fetch';
 
 // default constants for paging.
 const PageSize = 10;
 
-const getDetailsUrl = ({ id }) => `${BaseMarvelUrl}/characters/${id}?${apiKeys}`;
+const getDetailsUrl = ({ id }) => `/characters/${id}?`;
 const getListUrl = (superheroName, limit, offset) => {
   // encode because some characters might have spaces in their name
   const nameFilter = superheroName && `&nameStartsWith=${encodeURI(superheroName)}`;
   const pagingFilter = `&limit=${limit}&offset=${offset}`;
-  return `${BaseMarvelUrl}/characters?${apiKeys}${nameFilter}${pagingFilter}`;
+  return `/characters?${nameFilter}${pagingFilter}`;
 };
 
 const parseImage = (superhero, small = false) => (
@@ -39,7 +38,7 @@ const parseList = ({ data: { total, results } }) => ({
 });
 
 export const fetchSuperheroDetails = async function fetchSuperheroDetails(superhero) {
-  const response = await fetch(getDetailsUrl(superhero));
+  const response = await apiFetchDetails(getDetailsUrl(superhero));
   const jsonResponse = await response.json();
   return parseDetails(jsonResponse.data.results[0]);
 };
@@ -47,7 +46,7 @@ export const fetchSuperheroDetails = async function fetchSuperheroDetails(superh
 export const fetchSuperheroesList = async function fetchSuperheroesList(filters = {}) {
   const { pageSize = PageSize, currentPage = 1, superheroName = '' } = filters;
   const offset = (currentPage - 1) * pageSize;
-  const response = await fetch(getListUrl(superheroName, pageSize, offset));
+  const response = await apiFetch(getListUrl(superheroName, pageSize, offset));
   const jsonResponse = await response.json();
   return parseList(jsonResponse);
 };

@@ -1,0 +1,19 @@
+sudo: false
+language: node_js
+node_js:
+  - "8.10"
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm install -g yarn
+  - yarn install
+
+script:
+  - yarn lint
+  - CI=true yarn test
+
+notifications:
+  email: false

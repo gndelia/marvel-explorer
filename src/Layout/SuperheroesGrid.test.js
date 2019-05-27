@@ -21,13 +21,15 @@ describe('tests for SuperheroesGrid component', () => {
       fetchSuperheroes = jest.fn(),
       onNavigateToPage = jest.fn(),
       paging = {},
+      isFetching = false,
     } = otherProps;
     const Component = (
       <SuperheroesGrid
         superheroes={superheroes}
         fetchSuperheroes={fetchSuperheroes}
         onNavigateToPage={onNavigateToPage}
-        paging={paging} />
+        paging={paging}
+        isFetching={isFetching} />
     );
     return shallow(Component);
   };
@@ -91,5 +93,21 @@ describe('tests for SuperheroesGrid component', () => {
   it('should render an attribution with default link if no url was provided', () => {
     const url = '';
     assertAttribution(url, 'https://marvel.com');
+  });
+
+  it('should render a message if no superheroes were found', () => {
+    const wrapper = shallowGrid([]);
+    expect(wrapper.find('.superhero-row'))
+      .toHaveLength(0);
+    expect(wrapper.find('.no-superheroes-found'))
+      .toHaveLength(1);
+  });
+
+  it('should render a message if the superheroes are being fetched', () => {
+    const wrapper = shallowGrid([], { isFetching: true });
+    expect(wrapper.find('.superheroes-loading'))
+      .toHaveLength(1);
+    expect(wrapper.find('.no-superheroes-found'))
+      .toHaveLength(0);
   });
 });

@@ -9,6 +9,7 @@ class SuperheroesGrid extends React.Component {
     super(props);
     this.renderSuperheroes = this.renderSuperheroes.bind(this);
     this.onSuperheroFilter = this.onSuperheroFilter.bind(this);
+    this.renderGrid = this.renderGrid.bind(this);
   }
   componentDidMount() {
     this.props.fetchSuperheroes(this.props.paging);
@@ -19,6 +20,20 @@ class SuperheroesGrid extends React.Component {
       ...this.props.paging,
       superheroName,
     });
+  }
+
+  renderGrid() {
+    if (this.props.isFetching) {
+      return <span className="superheroes-loading">Loading data..</span>;
+    }
+    if (this.props.superheroes.length === 0) {
+      return <span className="no-superheroes-found">No superheroes were found!</span>;
+    }
+    return (
+      <ul className="superheroes-rows-container">
+        {this.renderSuperheroes()}
+      </ul>
+    );
   }
 
   renderSuperheroes() {
@@ -71,13 +86,7 @@ class SuperheroesGrid extends React.Component {
             </div>
           </li>
         </ul>
-        {this.props.isFetching ?
-          (<span>Loading data..</span>)
-          : (
-            <ul className="superheroes-rows-container">
-              {this.renderSuperheroes()}
-            </ul>
-          )}
+        {this.renderGrid()}
       </section>
     );
   }

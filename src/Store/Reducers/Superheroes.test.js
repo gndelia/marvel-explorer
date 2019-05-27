@@ -13,10 +13,6 @@ describe('Tests for superheroes reducer', () => {
       paging: {
         total: 0,
         currentPage: 1,
-        numberOfPages: 1,
-        superheroName: '',
-        pageSizes: [10],
-        pageSize: 10,
       },
     },
   });
@@ -43,8 +39,8 @@ describe('Tests for superheroes reducer', () => {
     const state = getInitialState();
     state.ui.paging = { ...state.ui.paging, total: 100 };
     const payload = {
-      pageSize: state.ui.paging.pageSize,
       currentPage: payloadCurrentPage,
+      pageSize: 10,
       superheroName: 'superhero',
     };
     expect(superheroes(state, { type: UI_UPDATE_PAGING_PARAMS, payload }))
@@ -54,9 +50,6 @@ describe('Tests for superheroes reducer', () => {
           ...state.ui,
           paging: {
             ...state.ui.paging,
-            numberOfPages: 10,
-            pageSize: payload.pageSize,
-            superheroName: payload.superheroName,
             currentPage: expectedCurrentPage
           },
         },
@@ -68,17 +61,37 @@ describe('Tests for superheroes reducer', () => {
     assertPagingParams(currentPage, currentPage);
   });
 
-  it('should set 1 as current page if a negative page is passed along', () => {
-    assertPagingParams(-1, 1);
-  });
-
-  it('should set the max possible page number as current page if a bigger number is passed', () => {
-    assertPagingParams(9999, 10);
-  });
-
   it('should not update the paging state if no params are provided', () => {
     const state = {};
     expect(superheroes(state, { type: UI_UPDATE_PAGING_PARAMS, payload: {} }))
       .toEqual(state);
+  });
+
+  const assertPageChanges = (state, payload, expectedCurrentPage) => {
+    expect(superheroes(state, { type: RECEIVE_SUPERHEROES, payload }))
+      .toEqual({
+        ...state,
+        list: payload.superheroes,
+        ui: {
+          ...state.ui,
+          paging: {
+            ...state.ui.paging,
+            currentPage: expectedCurrentPage,
+            total: payload.total,
+          },
+        },
+      });
+  };
+
+  it('should set currentPage as 1 if there are no results', () => {
+    const state = { ui: { isFetching: false, paging: { currentPage: 2 } } };
+    const payload = { total: 0, superheroes: [] };
+    assertPageChanges(state, payload, 1);
+  });
+
+  it('should set currentPage appropiately given total and page size', () => {
+    const state = { ui: { isFetching: false, paging: { currentPage: 2 } } };
+    const payload = { total: 40, superheroes: Array.from({ length: 10 }) };
+    assertPageChanges(state, payload, 2);
   });
 });

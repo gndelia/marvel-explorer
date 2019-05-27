@@ -7,18 +7,28 @@ import AppearsIn from './AppearsIn';
 class SuperheroesGrid extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      superheroName: '',
+    };
     this.renderSuperheroes = this.renderSuperheroes.bind(this);
     this.onSuperheroFilter = this.onSuperheroFilter.bind(this);
     this.renderGrid = this.renderGrid.bind(this);
+    this.onSuperheroChange = this.onSuperheroChange.bind(this);
   }
   componentDidMount() {
     this.props.fetchSuperheroes(this.props.paging);
   }
 
-  onSuperheroFilter(superheroName) {
-    this.props.fetchSuperheroes({
+  async onSuperheroChange(superheroName) {
+    this.setState({ superheroName });
+    await this.onSuperheroFilter({ currentPage: 1 });
+  }
+
+  async onSuperheroFilter(paging) {
+    await this.props.fetchSuperheroes({
       ...this.props.paging,
-      superheroName,
+      ...paging,
+      superheroName: this.state.superheroName,
     });
   }
 
@@ -71,8 +81,8 @@ class SuperheroesGrid extends React.Component {
       <section className="superheroes-grid-container">
         <GridFilter
           paging={this.props.paging}
-          fetchSuperheroes={this.props.fetchSuperheroes}
-          onSuperheroFilter={this.onSuperheroFilter} />
+          fetchSuperheroes={this.onSuperheroFilter}
+          onSuperheroFilter={this.onSuperheroChange} />
         <ul className="header-grid">
           <li>Name</li>
           <li>Image</li>

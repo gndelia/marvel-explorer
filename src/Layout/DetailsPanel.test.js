@@ -81,7 +81,10 @@ describe('Unit tests for DetailsPanel', () => {
     const wrapper = shallowDetails(superhero, false, createMockRouteMatch(1), fetchDetails);
     // update props so did update is called
     const newId = 2;
-    wrapper.setProps({ match: createMockRouteMatch(newId) });
+    wrapper.setProps({
+      superhero: { ...superhero, id: newId },
+      match: createMockRouteMatch(newId)
+    });
     expect(fetchDetails)
       .toHaveBeenLastCalledWith(newId);
     expect(fetchDetails)
@@ -97,11 +100,17 @@ describe('Unit tests for DetailsPanel', () => {
     const cleanDetails = jest.fn();
     const wrapper = shallowDetails(
       superhero,
-      false,createMockRouteMatch(1),
+      false,
+      createMockRouteMatch(1),
       fetchDetails,
       cleanDetails
     );
-    wrapper.setProps({ match: { params: {} } });
+    wrapper.setProps({
+      superhero: {
+        ...superhero,
+        id: undefined,
+      },
+    });
     expect(cleanDetails)
       .toHaveBeenCalledTimes(1);
   });

@@ -11,7 +11,10 @@ const mapStateToProps = ({ superheroes }) => {
   return {
     superheroes: list,
     isFetching,
-    paging,
+    paging: {
+      ...paging,
+      pageSize: 10,
+    },
   };
 };
 

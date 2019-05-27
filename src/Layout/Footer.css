@@ -3,7 +3,12 @@
     justify-content: flex-end;
     justify-self: flex-end;
 }
+.footer-container .marvel-copyright {
+    font-weight: 600;
+}
+
 .footer-container .copyright-container {
+    margin-left: 100px;
     font-style: italic;
 }
 

@@ -26,6 +26,7 @@ export const apiFetch = function apiFetch(uri) {
     return fetch(`${BaseMarvelUrl}${uri}&apikey=${apiKeys}`);
   }
   const { limit, offset = 0, nameStartsWith = '' } = getJsonParams(uri);
+  const parsedOffset = parseInt(offset, 10);
   warnAboutMocking();
   // mock fetch by using the mock
   const filtered = mock.data.results
@@ -35,7 +36,7 @@ export const apiFetch = function apiFetch(uri) {
       data: {
         ...mock.data,
         total: filtered.length,
-        results: filtered.slice(offset, offset + limit),
+        results: filtered.slice(parsedOffset, parsedOffset + parseInt(limit), 10),
       },
     })),
   });

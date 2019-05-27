@@ -1,5 +1,6 @@
 {
   "name": "marvel-explorer",
+  "description": "Explore your favourite characters from the Marvel Universe!",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -49,5 +50,13 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "react-test-renderer": "^16.8.6",
     "redux-mock-store": "^1.5.3"
+  },
+  "author": "Gonzalo D'Elia",
+  "bugs": {
+    "url": "https://github.com/gndelia/marvel-explorer/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gndelia/marvel-explorer"
   }
 }

@@ -8,8 +8,11 @@
   height: 100hw;
 }
 
-.btn {
+.btn:hover {
   cursor: pointer;
+}
+
+.btn {
   position: relative;
   display: inline-block;
   padding: 0.25em 0.5em;

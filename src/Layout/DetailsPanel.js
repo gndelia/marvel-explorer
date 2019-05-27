@@ -9,22 +9,20 @@ class DetailsPanel extends React.Component {
   }
 
   componentDidMount() {
-    const id = parseInt(this.props.match.params.id, 10);
-    if (Number.isInteger(id)) {
-      this.props.fetchDetails(id);
+    if (this.props.superhero.id) {
+      this.props.fetchDetails(this.props.superhero.id);
     }
   }
 
   componentDidUpdate(prevProps) {
-    const { id } = this.props.match.params;
-    if (prevProps.match.params.id !== id && id === undefined) {
+    const { id } = this.props.superhero;
+    if (prevProps.superhero.id !== id && id === undefined) {
       this.props.cleanDetails();
       return;
     }
-    const parsedId = parseInt(id, 10);
     // if url changed
-    if (prevProps.match.params.id !== this.props.match.params.id && Number.isInteger(parsedId)) {
-      this.props.fetchDetails(parsedId);
+    if (prevProps.superhero.id !== id) {
+      this.props.fetchDetails(id);
       return;
     }
   }

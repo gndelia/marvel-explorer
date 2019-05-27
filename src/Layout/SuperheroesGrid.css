@@ -11,8 +11,12 @@
 
 .superheroes-grid-container .header-grid > li:first-child,
 .superheroes-grid-container .superhero-row > :first-child {
-  width: 30%;
+  width: 35%;
   text-align: left;
+}
+
+.superheroes-grid-container .superhero-row > :first-child {
+  font-size: 14px;
 }
 
 .superheroes-grid-container .header-grid > li:nth-child(2),
@@ -27,8 +31,8 @@
   text-align: center;
 }
 
-.superheroes-grid-container .superhero-row > * {
-  line-height: 100px;
+.superheroes-grid-container .superhero-row > *:not(img) {
+  line-height: 75px;
 }
 
 .superheroes-grid-container .participations-container {
@@ -50,7 +54,6 @@
 
 .superheroes-grid-container .superheroes-rows-container .superhero-row {
   display: flex;
-  margin-bottom: 10px;
 }
 
 .superheroes-grid-container .superheroes-rows-container .superhero-row img {

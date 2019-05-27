@@ -64,9 +64,13 @@ class SuperheroesGrid extends React.Component {
             </div>
           </li>
         </ul>
-        <ul className="superheroes-rows-container">
-          {this.renderSuperheroes()}
-        </ul>
+        {this.props.isFetching ?
+          (<span>Loading data..</span>)
+          : (
+            <ul className="superheroes-rows-container">
+              {this.renderSuperheroes()}
+            </ul>
+          )}
       </section>
     );
   }

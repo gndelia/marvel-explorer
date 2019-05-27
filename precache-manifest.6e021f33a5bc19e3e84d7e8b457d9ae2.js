@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "95b8c0e94dd056d288fa779ef4673141",
+    "revision": "157eaaa88b197a54ffa9b5bba6014dc3",
     "url": "/marvel-explorer/index.html"
   },
   {
-    "revision": "0cd968aee0ef261a7cba",
+    "revision": "3ccdcf219dc32418f58a",
     "url": "/marvel-explorer/static/css/main.7227d080.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/marvel-explorer/static/js/2.011cc290.chunk.js"
   },
   {
-    "revision": "0cd968aee0ef261a7cba",
-    "url": "/marvel-explorer/static/js/main.163f42fa.chunk.js"
+    "revision": "3ccdcf219dc32418f58a",
+    "url": "/marvel-explorer/static/js/main.b2ff885e.chunk.js"
   },
   {
     "revision": "8bb820309f0a4d4723ab",

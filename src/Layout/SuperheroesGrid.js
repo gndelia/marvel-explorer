@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './SuperheroesGrid.css';
 import GridFilter from './GridFilter';
 import AppearsIn from './AppearsIn';
 
@@ -28,12 +29,14 @@ class SuperheroesGrid extends React.Component {
         key={superhero.id}>
         <span>{superhero.name}</span>
         <img src={superhero.image} alt="main superhero thumbnail" />
-        <AppearsIn event={superhero.appearsInComics} />
-        <AppearsIn event={superhero.appearsInSeries} />
-        <AppearsIn event={superhero.appearsInEvents} />
-        <AppearsIn event={superhero.appearsInStories} />
+        <div className="appears-in-container">
+          <AppearsIn event={superhero.appearsInComics} />
+          <AppearsIn event={superhero.appearsInSeries} />
+          <AppearsIn event={superhero.appearsInEvents} />
+          <AppearsIn event={superhero.appearsInStories} />
+        </div>
         <Link to={`/${superhero.id}`}>
-          <button>View Details</button>
+          <button className="btn-view-details">View Details</button>
         </Link>
       </li>
     ));
@@ -46,15 +49,20 @@ class SuperheroesGrid extends React.Component {
           paging={this.props.paging}
           fetchSuperheroes={this.props.fetchSuperheroes}
           onSuperheroFilter={this.onSuperheroFilter} />
-        <ul className="">
+        <ul className="header-grid">
           <li>Name</li>
           <li>Image</li>
-          <li>Participates in Comics</li>
-          <li>Participates in Series</li>
-          <li>Participates in Events</li>
-          <li>Participates in Stories</li>
+          <li className="participations-container">
+            <span>Participates in:</span>
+            <div className="participations">
+              <span>Comics</span>
+              <span>Series</span>
+              <span>Events</span>
+              <span>Stories</span>
+            </div>
+          </li>
         </ul>
-        <ul>
+        <ul class="superheroes-rows-container">
           {this.renderSuperheroes()}
         </ul>
       </section>

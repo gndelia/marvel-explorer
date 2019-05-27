@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/marvel-explorer/static/css/main.7227d080.chunk.css",
-    "main.js": "/marvel-explorer/static/js/main.b2ff885e.chunk.js",
-    "main.js.map": "/marvel-explorer/static/js/main.b2ff885e.chunk.js.map",
-    "runtime~main.js": "/marvel-explorer/static/js/runtime~main.47842ff8.js",
-    "runtime~main.js.map": "/marvel-explorer/static/js/runtime~main.47842ff8.js.map",
-    "static/js/2.011cc290.chunk.js": "/marvel-explorer/static/js/2.011cc290.chunk.js",
-    "static/js/2.011cc290.chunk.js.map": "/marvel-explorer/static/js/2.011cc290.chunk.js.map",
-    "index.html": "/marvel-explorer/index.html",
-    "precache-manifest.6e021f33a5bc19e3e84d7e8b457d9ae2.js": "/marvel-explorer/precache-manifest.6e021f33a5bc19e3e84d7e8b457d9ae2.js",
-    "service-worker.js": "/marvel-explorer/service-worker.js",
-    "static/css/main.7227d080.chunk.css.map": "/marvel-explorer/static/css/main.7227d080.chunk.css.map"
+    "main.css": "https://gndelia.github.io/marvel-explorer/static/css/main.7227d080.chunk.css",
+    "main.js": "https://gndelia.github.io/marvel-explorer/static/js/main.a788511a.chunk.js",
+    "main.js.map": "https://gndelia.github.io/marvel-explorer/static/js/main.a788511a.chunk.js.map",
+    "runtime~main.js": "https://gndelia.github.io/marvel-explorer/static/js/runtime~main.4c3f52bb.js",
+    "runtime~main.js.map": "https://gndelia.github.io/marvel-explorer/static/js/runtime~main.4c3f52bb.js.map",
+    "static/js/2.011cc290.chunk.js": "https://gndelia.github.io/marvel-explorer/static/js/2.011cc290.chunk.js",
+    "static/js/2.011cc290.chunk.js.map": "https://gndelia.github.io/marvel-explorer/static/js/2.011cc290.chunk.js.map",
+    "index.html": "https://gndelia.github.io/marvel-explorer/index.html",
+    "precache-manifest.713697fc8e3c6acfbc54dae97cd574b2.js": "https://gndelia.github.io/marvel-explorer/precache-manifest.713697fc8e3c6acfbc54dae97cd574b2.js",
+    "service-worker.js": "https://gndelia.github.io/marvel-explorer/service-worker.js",
+    "static/css/main.7227d080.chunk.css.map": "https://gndelia.github.io/marvel-explorer/static/css/main.7227d080.chunk.css.map"
   }
 }

@@ -1,5 +1,6 @@
 # marvel-explorer
 Learn the details of your favourite Marvel superheroes!
+[See it in action (with mocked data)](https://gndelia.github.io/marvel-explorer/)
 
 [![Build Status](https://travis-ci.com/gndelia/marvel-explorer.svg?branch=master)](https://travis-ci.com/gndelia/marvel-explorer) [![codecov](https://codecov.io/gh/gndelia/marvel-explorer/branch/master/graph/badge.svg)](https://codecov.io/gh/gndelia/marvel-explorer)
 
@@ -67,15 +68,33 @@ yarn test:coverage
 yarn lint
 ```
 
-## Production setup
+## Production Setup
 
-1. In order to build build the optimized bundle, run the following command
+Our application is hosted in [Github Pages](https://facebook.github.io/create-react-app/docs/deployment#github-pages-https-pagesgithubcom) using CRA.
+
+In order to deploy with Github Pages, execute the following steps.
+
+1. Configure your `homepage` in your `package.json` file
+
+```javascript
+// other fields
+"homepage": "http://gndelia.github.io/marvel-explorer",
+// more fields
+```
+
+In this case we will use my page but you can configure your own.
+
+2 Configure your appropiate Marvel Public API key (or leave the default in order to use mocked data) and run the following command.
+
+3. Set as a referred domain the domain where you're publishing. Otherwise you won't be able to hit the Marvel Api.
 
 ```
-yarn build
+yarn deploy
 ```
 
-A bundle will be built inside `/build` folder. And that's it! You only need to serve that through a server. A basic one to begin with is [serve](https://github.com/zeit/serve).  
+Internally, the `build ` command will be run, which will create an optimized bundle  inside `/build` folder. And that's it! 
+
+Another option if github pages is limited, is to serve it through a server. A basic one to begin with is [serve](https://github.com/zeit/serve).  
 In order to use it, it is required to install it globally and then using the command `serve`
 
 ```
@@ -103,3 +122,4 @@ Because of that, I left the mocked response as part of the repo, in case you don
 - I did not use snapshot testing. Although it was a small project, the UI changed as I worked, and having to update snapshots every time would have taken too much time. I preferred to focus on Shallow testing with enzyme, which I feel closer to unit testing rather than using snapshots and/or mounting the entire component.
 - Although I am aware of [react-router-redux](https://github.com/reactjs/react-router-redux), I did not use it because, as their readme states, it is deprecated. Considering it is a small project and only two urls were required, I did not use any integration at all. Although I admit that two layout components might be coupled with the router, I think that taking advantage of React's events to prepopulate state when loading a specific url, for this particular project, is fine. `react-router-redux` seems to recommend [connected-react-router](https://github.com/supasate/connected-react-router) but to be honest, I had no time to check it.
 - I used [Create React App](https://facebook.github.io/create-react-app/docs/getting-started) as a boilerplate to create the application because, well, I have used it and I like it. It works very well, and it let me focus on coding rather than fighting with too much configuration.
+- Because my keys do not work, the demo deployed in https://gndelia.github.io/marvel-explorer/ is using the mocked data I've mentioned before.

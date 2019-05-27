@@ -8,7 +8,7 @@ import store from './Store/ConfigureStore';
 import App from './Layout/App';
 import * as serviceWorker from './serviceWorker';
 
-const basename = '/superheroes';
+const basename = `${process.env.PUBLIC_URL}/superheroes`;
 
 ReactDOM.render(
   <Provider store={store}>

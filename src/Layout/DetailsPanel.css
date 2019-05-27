@@ -1,3 +1,7 @@
 .details-panel-container .superhero-image {
     max-width: 50%;
 }
+
+.details-panel-container .middle-section {
+    display: flex;
+}

@@ -47,9 +47,11 @@ class DetailsPanel extends React.Component {
     }
     return (
       <section className="details-panel-container">
-        <h3 className="superhero-name">{superhero.name}</h3>
-        <img className="superhero-image" src={superhero.image} alt="superhero main portrait" />
-        <span className="superhero-bio">BIO: {superhero.description || 'No BIO available'}</span>
+        <h2 className="superhero-name">{superhero.name}</h2>
+        <div className="middle-section">
+          <img className="superhero-image" src={superhero.image} alt="superhero main portrait" />
+          <span className="superhero-bio">BIO: {superhero.description || 'No BIO available'}</span>
+        </div>
         <ul>
           {this.renderUrls(superhero.urls)}
         </ul>

@@ -1,0 +1,22 @@
+.header-container h1 {
+  font-size: 50px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.header-container h1, .header-container h4 {
+  text-align: center;
+}
+
+.header-container .title-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-container .logo {
+  align-self: center;
+  max-height: 50px;
+  margin-left: 20px;
+}

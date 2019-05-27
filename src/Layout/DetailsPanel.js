@@ -32,7 +32,7 @@ class DetailsPanel extends React.Component {
   renderUrls(urls) {
     return urls.map(({ type, url }) => (
       <li key={type}>
-        <a href={url}>{type}</a>
+        <a target="_blank" rel="noopener noreferrer" href={url}>{type}</a>
       </li>)
     );
   }
@@ -40,17 +40,20 @@ class DetailsPanel extends React.Component {
   render() {
     const { superhero, isFetching } = this.props;
     if (!superhero.id) {
-      return <span>Pick a superhero to learn about him/her!</span>;
+      return <span className="pick-superhero-msg">Pick a superhero to learn about him/her!</span>;
     }
     if (isFetching) {
       return <span>Loading details of the superhero...</span>;
     }
     return (
       <section className="details-panel-container">
-        <h3 className="superhero-name">{superhero.name}</h3>
-        <img className="superhero-image" src={superhero.image} alt="superhero main portrait" />
-        <span className="superhero-bio">BIO: {superhero.description || 'No BIO available'}</span>
+        <h2 className="superhero-name">{superhero.name}</h2>
+        <div>
+          <img className="superhero-image" src={superhero.image} alt="superhero main portrait" />
+        </div>
+        <span className="superhero-bio">{superhero.description || 'No BIO available'}</span>
         <ul>
+          Useful Links:
           {this.renderUrls(superhero.urls)}
         </ul>
       </section>

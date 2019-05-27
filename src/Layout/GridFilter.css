@@ -1,0 +1,25 @@
+.grid-filter-container > div:nth-child(2) {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 5px;
+}
+
+.grid-filter-container .superhero-filter {
+    width: 50%;
+    margin-left: 10px;
+}
+
+.grid-filter-container .superhero-filter::-webkit-input-placeholder {
+    font-style: italic;
+}
+.grid-filter-container .superhero-filter:-moz-placeholder {
+  font-style: italic;  
+}
+
+.grid-filter-container .superhero-filter::-moz-placeholder {
+  font-style: italic;  
+}
+
+.grid-filter-container .superhero-filter:-ms-input-placeholder {  
+  font-style: italic; 
+}

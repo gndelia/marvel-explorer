@@ -2,6 +2,10 @@
     display: flex;
 }
 
-.main-container > * {
-    width: 50%;
+.main-container > :last-child {
+    width: 55%;
+}
+
+.main-container > :first-child {
+    width: 45%;
 }

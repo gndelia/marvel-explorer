@@ -1,0 +1,65 @@
+.superheroes-grid-container .header-grid {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.superheroes-grid-container ul {
+  padding-left: 10px;
+}
+
+.superheroes-grid-container .header-grid > li:first-child,
+.superheroes-grid-container .superhero-row > :first-child {
+  width: 35%;
+  text-align: left;
+}
+
+.superheroes-grid-container .superhero-row > :first-child {
+  font-size: 14px;
+}
+
+.superheroes-grid-container .header-grid > li:nth-child(2),
+.superheroes-grid-container .superhero-row > :nth-child(2) {
+  text-align: center;
+  width: 10%;
+}
+
+.superheroes-grid-container .header-grid > li:nth-child(3),
+.superheroes-grid-container .superhero-row > :nth-child(3) {
+  width: 35%;
+  text-align: center;
+}
+
+.superheroes-grid-container .superhero-row > *:not(img) {
+  line-height: 75px;
+}
+
+.superheroes-grid-container .participations-container {
+  text-align: center;
+}
+
+.superheroes-grid-container .participations-container .participations {
+  display: flex;
+  justify-content: space-between;
+}
+
+.superheroes-grid-container .participations-container .participations > span {
+  width: 25%;
+}
+
+.superheroes-grid-container .superheroes-rows-container {
+  list-style-type: none;
+}
+
+.superheroes-grid-container .superheroes-rows-container .superhero-row {
+  display: flex;
+}
+
+.superheroes-grid-container .superheroes-rows-container .superhero-row img {
+  max-width: 125px;
+}
+
+.superheroes-grid-container .superhero-row .appears-in-container > *{
+  width: 25%;
+}

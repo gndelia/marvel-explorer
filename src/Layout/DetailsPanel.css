@@ -1,3 +1,26 @@
+.pick-superhero-msg {
+  font-size: 24px;
+  font-style: italic;
+  text-align: center;
+}
+
+.details-panel-container h2 {
+  font-size: 24px;
+  text-align: center;
+}
+
 .details-panel-container .superhero-image {
-    max-width: 50%;
+  display: block;
+  max-width: 50%;
+  max-height: 500px;
+  margin: auto;
+}
+
+.details-panel-container .superhero-bio {
+  font-style: italic; 
+}
+
+.details-panel-container ul {
+  list-style-type: none;
+  padding-left: 0px;
 }

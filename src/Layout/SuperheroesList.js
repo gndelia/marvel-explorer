@@ -6,10 +6,11 @@ import { withRouter } from 'react-router-dom';
 const mapStateToProps = ({ superheroes }) => {
   const {
     list,
-    ui: { paging },
+    ui: { paging, isFetching },
   } = superheroes;
   return {
     superheroes: list,
+    isFetching,
     paging,
   };
 };

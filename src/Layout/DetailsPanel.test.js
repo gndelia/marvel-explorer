@@ -37,10 +37,10 @@ describe('Unit tests for DetailsPanel', () => {
   });
 
   it('renders a message when no superhero has been selected', () => {
-    const expected = <span>Pick a superhero to learn about him/her!</span>;
+    const expected = 'Pick a superhero to learn about him/her!';
     const wrapper = shallowDetails({}, false, createMockRouteMatch(0));
-    expect(wrapper.equals(expected))
-      .toEqual(true);
+    expect(wrapper.text())
+      .toEqual(expected);
   });
 
   it('renders a superhero and its details', () => {
@@ -59,7 +59,7 @@ describe('Unit tests for DetailsPanel', () => {
       .first()
       .text()
     )
-      .toEqual(`BIO: ${superhero.description}`);
+      .toEqual(`${superhero.description}`);
     expect(wrapper.find('a'))
       .toHaveLength(urls.length);
     expect(fetchDetails)
@@ -73,7 +73,7 @@ describe('Unit tests for DetailsPanel', () => {
       .first()
       .text()
     )
-      .toEqual('BIO: No BIO available');
+      .toEqual('No BIO available');
   });
 
   it('fetches details for a superhero if the id changes (due to routing)', () => {

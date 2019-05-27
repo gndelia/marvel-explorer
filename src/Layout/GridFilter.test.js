@@ -30,6 +30,7 @@ describe('Tests for the GridFilter component', () => {
   });
 
   it('should fetch on typing on the textbox', () => {
+    jest.useFakeTimers();
     const onSuperheroFilter = jest.fn();
     const wrapper = shallowGridFilter({ onSuperheroFilter });
     const filterWrapper = wrapper
@@ -38,6 +39,7 @@ describe('Tests for the GridFilter component', () => {
     const filterText = 'filter mocked!';
     const event = { target: { value: filterText } };
     filterWrapper.simulate('change', event);
+    jest.runAllTimers();
     expect(onSuperheroFilter)
       .toHaveBeenCalledWith(filterText);
   });

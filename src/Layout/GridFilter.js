@@ -1,9 +1,14 @@
 import React from 'react';
+import AwesomeDebouncePromise from 'awesome-debounce-promise';
 import './GridFilter.css';
 import Pager from './Pager';
 
 const GridFilter = ({ paging, fetchSuperheroes, onSuperheroFilter }) => {
-  const onChange = event => onSuperheroFilter(event.target.value);
+  const debouncingTime = 500;
+  // create debounced function to prevent multiple requests
+  const debouncedOnSuperheroFilter = AwesomeDebouncePromise(onSuperheroFilter, debouncingTime);
+  const onChange = async event => await debouncedOnSuperheroFilter(event.target.value);
+
   return (
     <div className="grid-filter-container">
       <Pager

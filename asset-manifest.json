@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/marvel-explorer/static/css/main.7227d080.chunk.css",
-    "main.js": "/marvel-explorer/static/js/main.7baa5589.chunk.js",
-    "main.js.map": "/marvel-explorer/static/js/main.7baa5589.chunk.js.map",
+    "main.css": "/marvel-explorer/static/css/main.b2f8c47f.chunk.css",
+    "main.js": "/marvel-explorer/static/js/main.91070eb0.chunk.js",
+    "main.js.map": "/marvel-explorer/static/js/main.91070eb0.chunk.js.map",
     "runtime~main.js": "/marvel-explorer/static/js/runtime~main.47842ff8.js",
     "runtime~main.js.map": "/marvel-explorer/static/js/runtime~main.47842ff8.js.map",
-    "static/js/2.fda326cd.chunk.js": "/marvel-explorer/static/js/2.fda326cd.chunk.js",
-    "static/js/2.fda326cd.chunk.js.map": "/marvel-explorer/static/js/2.fda326cd.chunk.js.map",
+    "static/js/2.7b02229f.chunk.js": "/marvel-explorer/static/js/2.7b02229f.chunk.js",
+    "static/js/2.7b02229f.chunk.js.map": "/marvel-explorer/static/js/2.7b02229f.chunk.js.map",
     "index.html": "/marvel-explorer/index.html",
-    "precache-manifest.1acbc5547d134fad81119e8b42acb7f0.js": "/marvel-explorer/precache-manifest.1acbc5547d134fad81119e8b42acb7f0.js",
+    "precache-manifest.5c847bd8cb5a7edfdedf64de72be555e.js": "/marvel-explorer/precache-manifest.5c847bd8cb5a7edfdedf64de72be555e.js",
     "service-worker.js": "/marvel-explorer/service-worker.js",
-    "static/css/main.7227d080.chunk.css.map": "/marvel-explorer/static/css/main.7227d080.chunk.css.map"
+    "static/css/main.b2f8c47f.chunk.css.map": "/marvel-explorer/static/css/main.b2f8c47f.chunk.css.map"
   }
 }

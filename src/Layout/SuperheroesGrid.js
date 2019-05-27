@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import GridFilter from './GridFilter';
+import AppearsIn from './AppearsIn';
 
 class SuperheroesGrid extends React.Component {
   constructor(props) {
@@ -27,10 +28,10 @@ class SuperheroesGrid extends React.Component {
         key={superhero.id}>
         <span>{superhero.name}</span>
         <img src={superhero.image} alt="main superhero thumbnail" />
-        <span>{superhero.appearsInComics.toString()}</span>
-        <span>{superhero.appearsInSeries.toString()}</span>
-        <span>{superhero.appearsInEvents.toString()}</span>
-        <span>{superhero.appearsInStories.toString()}</span>
+        <AppearsIn event={superhero.appearsInComics} />
+        <AppearsIn event={superhero.appearsInSeries} />
+        <AppearsIn event={superhero.appearsInEvents} />
+        <AppearsIn event={superhero.appearsInStories} />
         <Link to={`/${superhero.id}`}>
           <button>View Details</button>
         </Link>

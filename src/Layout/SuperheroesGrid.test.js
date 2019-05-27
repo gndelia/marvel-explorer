@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import SuperheroesGrid from './SuperheroesGrid';
-import Pager from './Pager';
+import GridFilter from './GridFilter';
 
 describe('tests for SuperheroesGrid component', () => {
   const superheroes = Array.from(Array(4))
@@ -34,7 +34,7 @@ describe('tests for SuperheroesGrid component', () => {
     shallowGrid([]);
   });
 
-  it('should fetch super heroes on loading', () => {
+  it('should fetch superheroes on loading', () => {
     const fetchSuperheroes = jest.fn();
     shallowGrid([], { fetchSuperheroes });
     expect(fetchSuperheroes)
@@ -45,7 +45,7 @@ describe('tests for SuperheroesGrid component', () => {
     const wrapper = shallowGrid(superheroes);
     expect(wrapper.find('.superhero-row'))
       .toHaveLength(superheroes.length);
-    expect(wrapper.exists(Pager))
+    expect(wrapper.exists(GridFilter))
       .toEqual(true);
   });
 

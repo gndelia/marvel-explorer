@@ -13,7 +13,8 @@ describe('Tests for superheroes reducer', () => {
       paging: {
         total: 0,
         currentPage: 1,
-        numberOfPages: 0,
+        numberOfPages: 1,
+        superheroName: '',
         pageSizes: [10],
         pageSize: 10,
       },
@@ -41,7 +42,11 @@ describe('Tests for superheroes reducer', () => {
   const assertPagingParams = (payloadCurrentPage, expectedCurrentPage) => {
     const state = getInitialState();
     state.ui.paging = { ...state.ui.paging, total: 100 };
-    const payload = { pageSize: state.ui.paging.pageSize, currentPage: payloadCurrentPage };
+    const payload = {
+      pageSize: state.ui.paging.pageSize,
+      currentPage: payloadCurrentPage,
+      superheroName: 'superhero',
+    };
     expect(superheroes(state, { type: UI_UPDATE_PAGING_PARAMS, payload }))
       .toEqual({
         ...state,
@@ -51,6 +56,7 @@ describe('Tests for superheroes reducer', () => {
             ...state.ui.paging,
             numberOfPages: 10,
             pageSize: payload.pageSize,
+            superheroName: payload.superheroName,
             currentPage: expectedCurrentPage
           },
         },

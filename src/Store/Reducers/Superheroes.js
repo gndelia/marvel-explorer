@@ -9,9 +9,10 @@ const initialState = {
   ui: {
     isFetching: false,
     paging: {
+      superheroName: '',
       total: 0,
       currentPage: 1,
-      numberOfPages: 0,
+      numberOfPages: 1,
       pageSizes: [10],
       pageSize: 10,
     }
@@ -21,7 +22,7 @@ const initialState = {
 const calculateNumberOfPages = (total, pageSize) => Math.ceil(total / pageSize);
 
 const updatePagingParams = function updatePagingParams(state, pagingParams) {
-  const { currentPage, pageSize } = pagingParams;
+  const { currentPage, pageSize, superheroName } = pagingParams;
   // malformed request, return current state
   if (currentPage === undefined && pageSize === undefined) {
     return state;
@@ -35,6 +36,7 @@ const updatePagingParams = function updatePagingParams(state, pagingParams) {
       ...state.ui,
       paging: {
         ...state.ui.paging,
+        superheroName,
         pageSize,
         numberOfPages,
         currentPage: realCurrentPage,
@@ -45,6 +47,8 @@ const updatePagingParams = function updatePagingParams(state, pagingParams) {
 
 const recieveSuperheroes = (state, payload) => {
   const { total, superheroes } = payload;
+  const numberOfPages = Math.max(1, calculateNumberOfPages(total, state.ui.paging.pageSize));
+  const realCurrentPage = Math.min(Math.max(state.ui.paging.currentPage, 1), numberOfPages);
   return {
     ...state,
     list: superheroes,
@@ -53,8 +57,9 @@ const recieveSuperheroes = (state, payload) => {
       isFetching: false,
       paging: {
         ...state.ui.paging,
+        currentPage: realCurrentPage,
         total,
-        numberOfPages: calculateNumberOfPages(total, state.ui.paging.pageSize),
+        numberOfPages,
       }
     }
   };

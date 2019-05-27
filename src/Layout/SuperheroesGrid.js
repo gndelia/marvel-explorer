@@ -1,14 +1,22 @@
 import React from 'react';
-import Pager from './Pager';
 import { Link } from 'react-router-dom';
+import GridFilter from './GridFilter';
 
 class SuperheroesGrid extends React.Component {
   constructor(props) {
     super(props);
     this.renderSuperheroes = this.renderSuperheroes.bind(this);
+    this.onSuperheroFilter = this.onSuperheroFilter.bind(this);
   }
   componentDidMount() {
     this.props.fetchSuperheroes(this.props.paging);
+  }
+
+  onSuperheroFilter(superheroName) {
+    this.props.fetchSuperheroes({
+      ...this.props.paging,
+      superheroName,
+    });
   }
 
   renderSuperheroes() {
@@ -33,9 +41,10 @@ class SuperheroesGrid extends React.Component {
   render() {
     return (
       <section className="superheroes-grid-container">
-        <Pager
+        <GridFilter
           paging={this.props.paging}
-          onNavigateToPage={this.props.fetchSuperheroes} />
+          fetchSuperheroes={this.props.fetchSuperheroes}
+          onSuperheroFilter={this.onSuperheroFilter} />
         <ul className="">
           <li>Name</li>
           <li>Image</li>

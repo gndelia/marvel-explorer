@@ -32,7 +32,7 @@ Keep in mind that you can't add custom ports as part of the url referrer, so for
 
 If in doubt, check the section [Authentication for Client-Side Applications](https://developer.marvel.com/documentation/authorization)
 
-However, if you don't have an API key, or it does not work, we got you back! We include by default a Mock json with some responses, so you can play with it until you get your public key working. Just leave the default value in the `.env` configuration file (that is, the generic message `<YOUR-KEY-HERE>`) and the mock list (which consist of 100 characters) will run for you.
+However, if you don't have an API key, or it does not work, we got you back! We include by default a Mock json with some responses (superheroes from the letter "A" to "B"), so you can play with it until you get your public key working. Just leave the default value in the `.env` configuration file (that is, the generic message `<YOUR-KEY-HERE>`) and the mock list (which consist of 100 characters) will run for you.
 
 
 4. Run the following command to start your application

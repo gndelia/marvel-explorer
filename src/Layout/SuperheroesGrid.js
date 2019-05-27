@@ -28,7 +28,9 @@ class SuperheroesGrid extends React.Component {
         className="superhero-row"
         key={superhero.id}>
         <span>{superhero.name}</span>
-        <img src={superhero.image} alt="main superhero thumbnail" />
+        <div>
+          <img src={superhero.image} alt="main superhero thumbnail" />
+        </div>
         <div className="appears-in-container">
           <AppearsIn event={superhero.appearsInComics} />
           <AppearsIn event={superhero.appearsInSeries} />
@@ -36,7 +38,7 @@ class SuperheroesGrid extends React.Component {
           <AppearsIn event={superhero.appearsInStories} />
         </div>
         <Link to={`/${superhero.id}`}>
-          <button className="btn-view-details">View Details</button>
+          <button className="btn btn-view-details">View</button>
         </Link>
       </li>
     ));
@@ -62,7 +64,7 @@ class SuperheroesGrid extends React.Component {
             </div>
           </li>
         </ul>
-        <ul class="superheroes-rows-container">
+        <ul className="superheroes-rows-container">
           {this.renderSuperheroes()}
         </ul>
       </section>

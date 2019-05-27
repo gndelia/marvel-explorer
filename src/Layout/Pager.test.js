@@ -25,10 +25,10 @@ describe('Tests for the Pager component', () => {
     )
       .toEqual('Viewing page 2 of 4');
     expect(wrapper
-      .find('.total-characters-text')
+      .find('.total-superheroes-text')
       .text()
     )
-      .toEqual('Total number of characters: 40');
+      .toEqual('Total number of superheroes: 40');
   });
 
   it('calls the appropiate functions on each button', () => {

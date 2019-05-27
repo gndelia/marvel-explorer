@@ -24,7 +24,7 @@ const Pager = props => {
       <span className="viewing-text">Viewing page {paging.currentPage} of {paging.numberOfPages}</span>
       <button className="next-page-button" onClick={onNextPage}>&#62;</button>
       <button className="last-page-button" onClick={onLastPage}>&#62;&#62;</button>
-      <span className="total-characters-text">Total number of characters: {paging.total}</span>
+      <span className="total-superheroes-text">Total number of superheroes: {paging.total}</span>
     </div>
   );
 };

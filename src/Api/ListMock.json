@@ -1,14 +1,73 @@
 {
   "data": {
-    "total": 13,
     "results": [{
+      "id": 197,
+      "name": "Drax",
+      "urls": [],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "thumbnail": {
+        "path": "",
+        "extension": "jpg"
+      },
+      "comics": {
+        "available": 1
+      },
+      "series": {
+        "available": 0
+      },
+      "events": {
+        "available": 1
+      },"stories": {
+        "available": 1
+      }
+    }, {
+      "id": 198,
+      "name": "Gamora",
+      "urls": [],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "thumbnail": {
+        "path": "",
+        "extension": "jpg"
+      },
+      "comics": {
+        "available": 1
+      },
+      "series": {
+        "available": 0
+      },
+      "events": {
+        "available": 1
+      },"stories": {
+        "available": 1
+      }
+    }, {
+      "id": 199,
+      "name": "Ego",
+      "urls": [],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "thumbnail": {
+        "path": "",
+        "extension": "jpg"
+      },
+      "comics": {
+        "available": 1
+      },
+      "series": {
+        "available": 0
+      },
+      "events": {
+        "available": 1
+      },"stories": {
+        "available": 1
+      }
+    }, {
       "id": 1,
       "name": "wolverine",
       "urls": [],
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "thumbnail": {
-        "path": "https://cdn3.iconfinder.com/data/icons/cinema-40/64/Wolverine_wild_forest_xmen_hero_superhero_wolf-128",
-        "extension": "png"
+        "path": "",
+        "extension": "jpg"
       },
       "comics": {
         "available": 1
@@ -27,7 +86,7 @@
       "urls": [],
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "thumbnail": {
-        "path": "http://marvellegends.net/Faces/avatars/ML00AIW1-Q22017IronMan",
+        "path": "",
         "extension": "jpg"
       },
       "comics": {
@@ -47,7 +106,7 @@
       "urls": [],
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "thumbnail": {
-        "path": "http://marvellegends.net/Faces/avatars/ML00AIW1-Q22017IronMan",
+        "path": "",
         "extension": "jpg"
       },
       "comics": {
@@ -63,11 +122,11 @@
       }
     }, {
       "id": 4,
-      "name": "Iron Man 4",
+      "name": "Magneto 4",
       "urls": [],
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "thumbnail": {
-        "path": "http://marvellegends.net/Faces/avatars/ML00AIW1-Q22017IronMan",
+        "path": "",
         "extension": "jpg"
       },
       "comics": {
@@ -83,11 +142,11 @@
       }
     }, {
       "id": 5,
-      "name": "Iron Man 5",
+      "name": "Profesor X 5",
       "urls": [],
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "thumbnail": {
-        "path": "http://marvellegends.net/Faces/avatars/ML00AIW1-Q22017IronMan",
+        "path": "",
         "extension": "jpg"
       },
       "comics": {
@@ -103,11 +162,11 @@
       }
     }, {
       "id": 6,
-      "name": "Iron Man 6",
+      "name": "Hulk 6",
       "urls": [],
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "thumbnail": {
-        "path": "http://marvellegends.net/Faces/avatars/ML00AIW1-Q22017IronMan",
+        "path": "",
         "extension": "jpg"
       },
       "comics": {
@@ -123,11 +182,11 @@
       }
     }, {
       "id": 7,
-      "name": "Iron Man 7",
+      "name": "Thor 7",
       "urls": [],
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "thumbnail": {
-        "path": "http://marvellegends.net/Faces/avatars/ML00AIW1-Q22017IronMan",
+        "path": "",
         "extension": "jpg"
       },
       "comics": {
@@ -147,7 +206,7 @@
       "urls": [],
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "thumbnail": {
-        "path": "http://marvellegends.net/Faces/avatars/ML00AIW1-Q22017IronMan",
+        "path": "",
         "extension": "jpg"
       },
       "comics": {
@@ -167,7 +226,7 @@
       "urls": [],
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "thumbnail": {
-        "path": "http://marvellegends.net/Faces/avatars/ML00AIW1-Q22017IronMan",
+        "path": "",
         "extension": "jpg"
       },
       "comics": {
@@ -187,7 +246,7 @@
       "urls": [],
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "thumbnail": {
-        "path": "http://marvellegends.net/Faces/avatars/ML00AIW1-Q22017IronMan",
+        "path": "",
         "extension": "jpg"
       },
       "comics": {
@@ -207,7 +266,7 @@
       "urls": [],
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "thumbnail": {
-        "path": "http://marvellegends.net/Faces/avatars/ML00AIW1-Q22017IronMan",
+        "path": "",
         "extension": "jpg"
       },
       "comics": {
@@ -227,7 +286,7 @@
       "urls": [],
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "thumbnail": {
-        "path": "http://marvellegends.net/Faces/avatars/ML00AIW1-Q22017IronMan",
+        "path": "",
         "extension": "jpg"
       },
       "comics": {
@@ -247,7 +306,47 @@
       "urls": [],
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "thumbnail": {
-        "path": "http://marvellegends.net/Faces/avatars/ML00AIW1-Q22017IronMan",
+        "path": "",
+        "extension": "jpg"
+      },
+      "comics": {
+        "available": 12
+      },
+      "series": {
+        "available": 13
+      },
+      "events": {
+        "available": 0
+      },"stories": {
+        "available": 5
+      }
+    }, {
+      "id": 14,
+      "name": "Dr Strange",
+      "urls": [],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "thumbnail": {
+        "path": "",
+        "extension": "jpg"
+      },
+      "comics": {
+        "available": 12
+      },
+      "series": {
+        "available": 13
+      },
+      "events": {
+        "available": 0
+      },"stories": {
+        "available": 5
+      }
+    }, {
+      "id": 13,
+      "name": "Iron Man 13",
+      "urls": [],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "thumbnail": {
+        "path": "",
         "extension": "jpg"
       },
       "comics": {

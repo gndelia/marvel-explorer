@@ -9,6 +9,7 @@ describe('tests for SuperheroesGrid component', () => {
       id: index,
       name: `superhero${index}`,
       image: 'image.jpg',
+      urls: [],
       appearsInComics: Math.random() < 0.5,
       appearsInSeries: Math.random() < 0.5,
       appearsInStories: Math.random() < 0.5,
@@ -59,5 +60,36 @@ describe('tests for SuperheroesGrid component', () => {
         .prop('to')
     )
       .toEqual(`/${superheroes[superheroIndex].id}`);
+  });
+
+  const assertAttribution = (url, expectedUrl) => {
+    const superhero = [{
+      ...superheroes[0],
+      urls: [],
+    }];
+    if (url.length > 0) {
+      superhero[0].urls.push({ url });
+    }
+    const wrapper = shallowGrid(superhero);
+    const attribution = wrapper
+      .find('.external-link-attribution')
+      .at(0);
+    expect(attribution.text())
+      .toEqual('Attribution');
+    expect(attribution
+      .props()
+      .href
+    )
+      .toEqual(expectedUrl);
+  };
+
+  it('should generate the attributions for a superhero', () => {
+    const url = 'my.mocked.url';
+    assertAttribution(url, url);
+  });
+
+  it('should render an attribution with default link if no url was provided', () => {
+    const url = '';
+    assertAttribution(url, 'https://marvel.com');
   });
 });

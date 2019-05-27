@@ -40,6 +40,13 @@ class SuperheroesGrid extends React.Component {
         <Link to={`/${superhero.id}`}>
           <button className="btn btn-view-details">View</button>
         </Link>
+        <a
+          className="external-link-attribution"
+          target="_blank"
+          rel="noopener noreferrer"
+          href={superhero.urls.length > 0 ? superhero.urls[0].url : 'https://marvel.com'}>
+            Attribution
+        </a>
       </li>
     ));
   }

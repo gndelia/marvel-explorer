@@ -11,7 +11,7 @@
 
 .superheroes-grid-container .header-grid > li:first-child,
 .superheroes-grid-container .superhero-row > :first-child {
-  width: 35%;
+  width: 30%;
   text-align: left;
 }
 
@@ -62,4 +62,8 @@
 
 .superheroes-grid-container .superhero-row .appears-in-container > *{
   width: 25%;
+}
+
+.superheroes-grid-container .superhero-row .external-link-attribution {
+  margin-left: 5px;
 }
